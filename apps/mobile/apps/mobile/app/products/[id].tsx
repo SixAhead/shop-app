@@ -5,10 +5,7 @@ import { PRODUCTS, formatPrice } from "../../lib/data";
 export default function ProductDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const product = PRODUCTS.find(p => p.id === id);
-
-  if (!product) {
-    return <View style={{ flex:1, alignItems:"center", justifyContent:"center" }}><Text>Product not found.</Text></View>;
-  }
+  if (!product) return <View style={{flex:1,alignItems:"center",justifyContent:"center"}}><Text>Product not found.</Text></View>;
 
   return (
     <View style={{ flex:1, padding:16, gap:12 }}>
